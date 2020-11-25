@@ -1,0 +1,44 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: istio-system
+resources:
+- ../../../../istio/istio-crds/base
+- ../../../../istio/istio-install/base
+- ingressgateway.route.yaml
+images:
+- name: docker.io/istio/proxy_init
+  newName: docker.io/ibmcom/istio-proxy_init-ppc64le
+  newTag: 1.2.2
+- name: docker.io/istio/kubectl
+  newName: docker.io/ibmcom/kubectl-ppc64le
+  newTag: v1.13.9
+- name: docker.io/istio/galley
+  newName: docker.io/ibmcom/istio-galley-ppc64le
+  newTag: 1.2.2
+- name: docker.io/istio/proxyv2
+  newName: docker.io/ibmcom/istio-proxyv2-ppc64le
+  newTag: 1.2.2
+- name: grafana/grafana
+  newName: docker.io/ibmcom/grafana-ppc64le
+  newTag: 5.2.0-f4
+- name: docker.io/kiali/kiali
+  newName: docker.io/ibmcom/kiali-ppc64le
+  newTag: v0.20.0
+- name: docker.io/istio/mixer
+  newName: docker.io/ibmcom/istio-mixer-ppc64le
+  newTag: 1.2.2
+- name: docker.io/istio/pilot
+  newName: docker.io/ibmcom/istio-pilot-ppc64le
+  newTag: 1.2.2
+- name: docker.io/prom/prometheus
+  newName: docker.io/ibmcom/prometheus-ppc64le
+  newTag: v2.8.0-f1
+- name: docker.io/istio/citadel
+  newName: docker.io/ibmcom/istio-citadel-ppc64le
+  newTag: 1.2.2
+- name: docker.io/istio/sidecar_injector
+  newName: docker.io/ibmcom/istio-sidecar_injector-ppc64le
+  newTag: 1.2.2
+- name: docker.io/jaegertracing/all-in-one
+  newName: docker.io/ibmcom/jaegertracing-all-in-one-ppc64le
+  newTag: 1.9

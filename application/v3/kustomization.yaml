@@ -20,6 +20,6 @@ resources:
 - ../application/overlays/application/application.yaml
 images:
 - name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newName: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newTag: 1.0-beta
+  newName: kubeflow123/application
+  newTag: v1.0
 
