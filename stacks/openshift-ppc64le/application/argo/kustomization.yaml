@@ -28,5 +28,14 @@ vars:
     apiVersion: v1
     kind: ConfigMap
     name: kubeflow-config
-
+images:
+- name: argoproj/argoui
+  newTag: 2.3.0-ppc64le
+  newName: kubeflow123/argoui
+- name: argoproj/workflow-controller
+  newTag: 2.3.0-ppc64le
+  newName: kubeflow123/workflow-controller
+- name: argoproj/argoexec
+  newTag: 2.3.0-ppc64le
+  newName: kubeflow123/argoexec
 
