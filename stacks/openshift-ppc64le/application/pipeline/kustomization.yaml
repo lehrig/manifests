@@ -51,18 +51,18 @@ images:
   newTag: 10.2.19
   newName: ibmcom/mariadb
 - name: gcr.io/ml-pipeline/api-server
-  newTag: 1.0.4.ppc64le
-  newName: lehrig/api-server:1.0.4.ppc64le
+  newTag: v1.0.4.ppc64le
+  newName: lehrig/api-server
 - name: gcr.io/ml-pipeline/persistenceagent
-  newTag: 1.0.4.ppc64le
-  newName: lehrig/persistent-agent:1.0.4.ppc64le
+  newTag: v1.0.4.ppc64le
+  newName: lehrig/persistent-agent
 - name: gcr.io/ml-pipeline/scheduledworkflow
-  newTag: 1.0.4.ppc64le
-  newName: lehrig/scheduledworkflow:1.0.4.ppc64le
+  newTag: v1.0.4.ppc64le
+  newName: lehrig/scheduledworkflow
 - name: gcr.io/ml-pipeline/frontend
-  newTag: 1.0.4.ppc64le
-  newName: lehrig/pipelines-ui:1.0.4.ppc64le
+  newTag: v1.0.4.ppc64le
+  newName: lehrig/pipelines-ui
 - name: gcr.io/ml-pipeline/viewer-crd-controller
-  newTag: 1.0.4.ppc64le
-  newName: lehrig/pipelines-viewer:1.0.4.ppc64le
+  newTag: v1.0.4.ppc64le
+  newName: lehrig/pipelines-viewer
   
