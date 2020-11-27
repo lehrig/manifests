@@ -9,17 +9,17 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/openshift/openshift-scc
+        path: stacks/openshift-ppc64le/application/openshift/openshift-scc
     name: openshift-scc
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/istio-stack
+        path: stacks/openshift-ppc64le/application/istio-stack
     name: istio-stack
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/istio
+        path: stacks/openshift-ppc64le/application/istio
     name: istio
   - kustomizeConfig:
       repoRef:
@@ -34,68 +34,68 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/cert-manager-crds
+        path: stacks/openshift-ppc64le/application/cert-manager-crds
     name: cert-manager-crds
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/cert-manager-kube-system-resources
+        path: stacks/openshift-ppc64le/application/cert-manager-kube-system-resources
     name: cert-manager-kube-system-resources
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/cert-manager
+        path: stacks/openshift-ppc64le/application/cert-manager
     name: cert-manager
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/argo
+        path: stacks/openshift-ppc64le/application/argo
     name: argo
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/jupyter-web-app
+        path: stacks/openshift-ppc64le/application/jupyter-web-app
     name: jupyter-web-app
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/notebook-controller
+        path: stacks/openshift-ppc64le/application/notebook-controller
     name: notebook-controller
 #  - kustomizeConfig:
 #      repoRef:
 #        name: manifests
-#        path: stacks/openshift/application/metadata
+#        path: stacks/openshift-ppc64le/application/metadata
 #    name: metadata
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/tf-job
+        path: stacks/openshift-ppc64le/application/tf-job
     name: tf-job
 #  - kustomizeConfig:
 #      repoRef:
 #        name: manifests
-#        path: stacks/openshift/application/pytorch-job
+#        path: stacks/openshift-ppc64le/application/pytorch-job
 #    name: pytorch-job
 #  - kustomizeConfig:
 #      repoRef:
 #        name: manifests
-#        path: stacks/openshift/application/katib
+#        path: stacks/openshift-ppc64le/application/katib
 #    name: katib
   # commenting this out since it is included in kubeflow-apps
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/pipeline
+        path: stacks/openshift-ppc64le/application/pipeline
     name: pipeline
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift/application/seldon
+        path: stacks/openshift-ppc64le/application/seldon
     name: seldon
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift
+        path: stacks/openshift-ppc64le
     name: kubeflow-apps
   repos:
   - name: manifests
