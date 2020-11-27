@@ -41,4 +41,4 @@ images:
   newTag: 1.2.2
 - name: docker.io/jaegertracing/all-in-one
   newName: docker.io/ibmcom/jaegertracing-all-in-one-ppc64le
-  newTag: 1.9
+  newTag: "1.9"
