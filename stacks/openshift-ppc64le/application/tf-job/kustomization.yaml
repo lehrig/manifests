@@ -7,4 +7,4 @@ resources:
 images:
 - name: gcr.io/kubeflow-images-public/tf_operator
   newTag: 5adee6f.ppc64le
-  newName: lehrig/tf_operator
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/tf_operator

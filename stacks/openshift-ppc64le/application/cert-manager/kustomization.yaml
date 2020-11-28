@@ -13,11 +13,11 @@ configurations:
 - ../../../../cert-manager/cert-manager/overlays/application/params.yaml
 images:
 - name: quay.io/jetstack/cert-manager-controller
-  newName: lehrig/cert-manager-controller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-controller
   newTag: v0.11.0.ppc64le
 - name: quay.io/jetstack/cert-manager-webhook
-  newName: lehrig/cert-manager-webhook
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-webhook
   newTag: v0.11.0.ppc64le
 - name: quay.io/jetstack/cert-manager-cainjector
-  newName: lehrig/cert-manager-cainjector
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-cainjector
   newTag: v0.11.0.ppc64le

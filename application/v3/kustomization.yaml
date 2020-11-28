@@ -20,6 +20,6 @@ resources:
 - ../application/overlays/application/application.yaml
 images:
 - name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newName: kubeflow123/application
-  newTag: v1.0
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/application-controller
+  newTag: v1.0.ppc64le
 

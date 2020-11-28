@@ -29,11 +29,11 @@ vars:
 
 images:
 - name: gcr.io/kubeflow-images-public/kfam
-  newName: lehrig/kfam
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/kfam
   newTag: v1.2.0.ppc64le
 - name: gcr.io/kubeflow-images-public/profile-controller
-  newName: lehrig/profile-controller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/profile-controller
   newTag: v1.2.0.ppc64le
 - name: gcr.io/kubeflow-images-public/centraldashboard
-  newName: lehrig/centraldashboard
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/centraldashboard
   newTag: v1.2.0.ppc64le

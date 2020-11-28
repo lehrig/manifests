@@ -46,23 +46,23 @@ vars:
 images:
 - name: gcr.io/ml-pipeline/minio
   newTag: RELEASE.2019-04-09T01-22-30Z.1
-  newName: ibmcom/minio
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/minio
 - name: gcr.io/ml-pipeline/mysql
   newTag: 10.2.19
-  newName: ibmcom/mariadb
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/mariadb
 - name: gcr.io/ml-pipeline/api-server
   newTag: v1.0.4.ppc64le
-  newName: lehrig/api-server
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/api-server
 - name: gcr.io/ml-pipeline/persistenceagent
   newTag: v1.0.4.ppc64le
-  newName: lehrig/persistent-agent
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/persistent-agent
 - name: gcr.io/ml-pipeline/scheduledworkflow
   newTag: v1.0.4.ppc64le
-  newName: lehrig/scheduledworkflow
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/scheduledworkflow
 - name: gcr.io/ml-pipeline/frontend
   newTag: v1.0.4.ppc64le
-  newName: lehrig/pipelines-ui
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/pipelines-ui
 - name: gcr.io/ml-pipeline/viewer-crd-controller
   newTag: v1.0.4.ppc64le
-  newName: lehrig/pipelines-viewer
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/pipelines-viewer
   

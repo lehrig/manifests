@@ -31,5 +31,5 @@ vars:
 images:
 - name: gcr.io/kubeflow-images-public/notebook-controller
   newTag: v1.2.0.ppc64le
-  newName: lehrig/notebook-controller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/notebook-controller
 

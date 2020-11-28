@@ -31,11 +31,11 @@ vars:
 images:
 - name: argoproj/argoui
   newTag: 2.3.0-ppc64le
-  newName: kubeflow123/argoui
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/argoui
 - name: argoproj/workflow-controller
   newTag: 2.3.0-ppc64le
-  newName: kubeflow123/workflow-controller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/workflow-controller
 - name: argoproj/argoexec
   newTag: 2.3.0-ppc64le
-  newName: kubeflow123/argoexec
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/argoexec
 
