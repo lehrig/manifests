@@ -21,5 +21,5 @@ resources:
 images:
 - name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
   newName: image-registry.openshift-image-registry.svc:5000/openshift/application-controller
-  newTag: v1.0.ppc64le
+  newTag: 7b313bc.ppc64le
 
