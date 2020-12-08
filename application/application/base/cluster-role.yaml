@@ -13,6 +13,7 @@ rules:
   - update
   - patch
   - watch
+  - delete
 - apiGroups:
   - app.k8s.io
   resources:
