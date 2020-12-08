@@ -65,4 +65,6 @@ images:
 - name: gcr.io/ml-pipeline/viewer-crd-controller
   newTag: v1.0.4.ppc64le
   newName: image-registry.openshift-image-registry.svc:5000/openshift/pipelines-viewer
-  
+- name: gcr.io/ml-pipeline/visualization-server
+  newTag: v1.0.4.ppc64le
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/visualization-server 
