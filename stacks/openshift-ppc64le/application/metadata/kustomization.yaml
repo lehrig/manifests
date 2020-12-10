@@ -48,6 +48,6 @@ images:
 - name: gcr.io/tfx-oss-public/ml_metadata_store_server
   newTag: v0.21.1.ppc64le
   newName: image-registry.openshift-image-registry.svc:5000/openshift/ml_metadata_store_server
-#- name: gcr.io/ml-pipeline/envoy
-#  newTag: metadata-grpc
-#  newName: image-registry.openshift-image-registry.svc:5000/openshift/envoy
+- name: gcr.io/ml-pipeline/envoy
+  newTag: v0.1.32.ppc64le
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/envoy
