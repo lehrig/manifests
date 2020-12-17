@@ -21,6 +21,11 @@ spec:
         name: manifests
         path: stacks/openshift-ppc64le/application/istio
     name: istio
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: stacks/openshift-ppc64le/application/add-anonymous-user-filter
+#    name: add-anonymous-user-filter
   - kustomizeConfig:
       repoRef:
         name: manifests

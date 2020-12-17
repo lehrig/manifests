@@ -5,8 +5,8 @@ resources:
 - ../../../../metadata/v3
 - metadata-db-serviceaccount.yaml
 
-patchesStrategicMerge:
-- metadata-db-deployment.yaml
+#patchesStrategicMerge:
+#- metadata-db-deployment.yaml
 
 patches:
 - target:
