@@ -3,3 +3,4 @@ varReference:
   kind: SecurityContextConstraints
 - path: metadata/name
   kind: SecurityContextConstraints
+

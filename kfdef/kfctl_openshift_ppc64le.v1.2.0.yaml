@@ -14,18 +14,23 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: stacks/openshift-ppc64le/application/istio-stack
+        path: stacks/openshift-ppc64le/application/istio-1-3-1-stack-openshift
     name: istio-stack
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/openshift-ppc64le/application/cluster-local-gateway-1-3-1
+    name: cluster-local-gateway
   - kustomizeConfig:
       repoRef:
         name: manifests
         path: stacks/openshift-ppc64le/application/istio
     name: istio
-#  - kustomizeConfig:
-#      repoRef:
-#        name: manifests
-#        path: stacks/openshift-ppc64le/application/add-anonymous-user-filter
-#    name: add-anonymous-user-filter
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/openshift-ppc64le/application/add-anonymous-user-filter
+    name: add-anonymous-user-filter
   - kustomizeConfig:
       repoRef:
         name: manifests
