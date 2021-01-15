@@ -40,6 +40,7 @@ users:
 - system:serviceaccount:istio-system:istio-sidecar-injector-service-account
 - system:serviceaccount:istio-system:istio-sidecar-injector-service-account
 - system:serviceaccount:istio-system:istio-galley-service-account
+- system:serviceaccount:istio-system:istio-nodeagent-service-account
 - system:serviceaccount:istio-system:prometheus
 #Component: istio/cluster-local-gateway
 - system:serviceaccount:istio-system:cluster-local-gateway-service-account
