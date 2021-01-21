@@ -38,3 +38,4 @@ images:
   newTag: v1.3.1.ppc64le
 patchesStrategicMerge:
 - patch_with_ppc64le_images.yaml
+- add_privileged_to_proxy_init.yaml
