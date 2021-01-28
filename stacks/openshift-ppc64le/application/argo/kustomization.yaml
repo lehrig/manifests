@@ -8,6 +8,7 @@ configMapGenerator:
   behavior: merge
   literals:
   - containerRuntimeExecutor=k8sapi
+  - executorImage=image-registry.openshift-image-registry.svc:5000/openshift/argoexec:2.3.0-ppc64le
 - name: kubeflow-config
   envs:
   - ../../config/params.env
