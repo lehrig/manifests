@@ -1,0 +1,92 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  namespace: kubeflow
+spec:
+  applications:
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: namespaces/base
+    name: namespaces
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/application
+    name: application
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/istio-1-3-1-stack
+    name: istio-stack
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/cluster-local-gateway-1-3-1
+    name: cluster-local-gateway
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: istio/istio/base
+    name: istio
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/cert-manager-crds
+    name: cert-manager-crds
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/cert-manager-kube-system-resources
+    name: cert-manager-kube-system-resources
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/cert-manager
+    name: cert-manager
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/add-anonymous-user-filter
+    name: add-anonymous-user-filter
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le/application/metacontroller
+    name: metacontroller
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: admission-webhook/bootstrap/overlays/application
+    name: bootstrap
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: stacks/kubernetes-ppc64le/application/spark-operator
+#    name: spark-operator
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/kubernetes-ppc64le
+    name: kubeflow-apps
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: knative/installs/generic
+#    name: knative
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: kfserving/installs/generic
+#    name: kfserving
+  # Spartakus is a separate applications so that kfctl can remove it
+  # to disable usage reporting
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: stacks/kubernetes/application/spartakus
+#    name: spartakus
+  repos:
+  - name: manifests
+    uri: /root/kubeflow/git/manifests
+  version: v1.2-branch

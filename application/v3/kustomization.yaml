@@ -18,8 +18,3 @@ resources:
 - ../application/base/service.yaml
 - ../application/base/stateful-set.yaml
 - ../application/overlays/application/application.yaml
-images:
-- name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/application
-  newTag: 7b313bc.ppc64le
-

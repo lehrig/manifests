@@ -1,0 +1,139 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+resources:
+  # Control pane
+  - ../../admission-webhook/webhook/v3
+  - ../../common/centraldashboard/overlays/stacks
+  - ../../kubeflow-roles/base
+  - ../../jupyter/jupyter-web-app/base_v3
+  - ../../jupyter/notebook-controller/base_v3
+  - ../../profiles/base_v3
+  # Training Operators
+#  - ../../pytorch-job/pytorch-job-crds/overlays/application
+#  - ../../pytorch-job/pytorch-operator/overlays/application
+  - ../../tf-training/tf-job-crds/overlays/application
+  - ../../tf-training/tf-job-operator/overlays/application
+#  - ../../mxnet-job/mxnet-operator/overlays/application
+#  - ../../mpi-job/mpi-operator/overlays/application
+#  - ../../katib/installs/katib-standalone
+  # Pipelines
+  - ../../pipeline/minio/installs/generic
+  - ../../pipeline/mysql/installs/generic
+  - ../../pipeline/installs/multi-user
+  - ../../argo/base_v3
+  # Serving components
+  - ../../seldon/seldon-core-operator/overlays/application
+  # Metadata
+  - ../../metadata/v3
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+- envs:
+  - ./config/params.env
+  name: kubeflow-config
+- name: workflow-controller-parameters
+  behavior: merge
+  literals:
+  - containerRuntimeExecutor=pns  #old value: k8sapi
+  - executorImage=docker.io/mgiessing/argoexec:v2.8.2.ppc64le
+vars:
+# We need to define vars at the top level otherwise we will get
+# conflicts.
+- fieldref:
+    fieldPath: data.clusterDomain
+  name: clusterDomain
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kubeflow-config
+- fieldref:
+    fieldPath: metadata.namespace
+  name: namespace
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kubeflow-config
+- fieldref:
+    fieldpath: metadata.namespace
+  name: katib-ui-namespace
+  objref:
+    kind: Service
+    name: katib-ui
+    apiVersion: v1
+images:
+- name: argoproj/argoui
+  newName: docker.io/kubeflow123/argoui
+  newTag: v2.3.0.ppc64le
+- name: argoproj/workflow-controller
+  newName: docker.io/mgiessing/workflow-controller
+  newTag: v2.8.2.ppc64le
+- name: argoproj/argoexec
+  newName: docker.io/mgiessing/argoexec
+  newTag: v2.8.2.ppc64le
+- name: gcr.io/kubeflow-images-public/jupyter-web-app
+  newName: docker.io/lehrig/jupyter-web-app
+  newTag: v1.2.0.ppc64le
+- name: gcr.io/kubeflow-images-public/notebook-controller
+  newName: docker.io/lehrig/notebook-controller
+  newTag: v1.2.0.ppc64le
+- name: gcr.io/kubeflow-images-public/tf_operator
+  newName: docker.io/lehrig/tf_operator
+  newTag: 5adee6f.ppc64le
+- name: mysql
+  newName: docker.io/ibmcom/mariadb
+  newTag: 10.2.19
+- name: gcr.io/kubeflow-images-public/metadata
+  newName: docker.io/lehrig/metadata
+  newTag: fc0acf4.ppc64le
+- name: gcr.io/tfx-oss-public/ml_metadata_store_server
+  newName: docker.io/lehrig/ml_metadata_store_server
+  newTag: v0.21.1.ppc64le
+- name: gcr.io/ml-pipeline/envoy
+  newName: docker.io/lehrig/envoy
+  newTag: v0.1.32.ppc64le
+- name: gcr.io/ml-pipeline/minio
+  newName: docker.io/ibmcom/minio
+  newTag: RELEASE.2019-04-09T01-22-30Z.1
+- name: gcr.io/ml-pipeline/mysql
+  newName: docker.io/ibmcom/mariadb
+  newTag: 10.2.19
+- name: gcr.io/ml-pipeline/api-server
+  newName: docker.io/lehrig/api-server
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/persistenceagent
+  newName: docker.io/lehrig/persistent-agent
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/scheduledworkflow
+  newName: docker.io/lehrig/scheduledworkflow
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/frontend
+  newName: docker.io/lehrig/pipelines-ui
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/viewer-crd-controller
+  newName: docker.io/lehrig/pipelines-viewer
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/visualization-server
+  newName: docker.io/lehrig/visualization-server
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/metadata-writer
+  newName: docker.io/lehrig/metadata-writer
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/cache-deployer
+  newName: docker.io/lehrig/cache-deployer
+  newTag: v1.0.4.ppc64le
+- name: gcr.io/ml-pipeline/cache-server
+  newName: docker.io/lehrig/cache-server
+  newTag: v1.0.4.ppc64le
+- name: docker.io/seldonio/seldon-core-operator
+  newName: docker.io/lehrig/seldon-core-operator
+  newTag: v1.4.0.ppc64le
+- name: gcr.io/kubeflow-images-public/kfam
+  newName: docker.io/lehrig/kfam
+  newTag: v1.2.0.ppc64le
+- name: gcr.io/kubeflow-images-public/profile-controller
+  newName: docker.io/lehrig/profile-controller
+  newTag: v1.2.0.ppc64le
+- name: gcr.io/kubeflow-images-public/centraldashboard
+  newName: docker.io/lehrig/centraldashboard
+  newTag: v1.2.0.ppc64le

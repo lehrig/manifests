@@ -8,7 +8,3 @@ resources:
 - stateful-set.yaml
 commonLabels:
   kustomize.component: metacontroller
-images:
-- name: metacontroller/metacontroller
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/metacontroller
-  newTag: v0.3.0.ppc64le

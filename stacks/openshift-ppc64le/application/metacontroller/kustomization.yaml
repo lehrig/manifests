@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: istio-system
+resources:
+- ../../../../metacontroller/base
+images:
+- name: metacontroller/metacontroller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/metacontroller
+  newTag: v0.3.0.ppc64le

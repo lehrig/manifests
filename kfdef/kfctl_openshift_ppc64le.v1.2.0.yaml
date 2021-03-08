@@ -34,12 +34,12 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: application/v3
+        path: stacks/openshift-ppc64le/application/application
     name: application
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: metacontroller/base
+        path: stacks/openshift-ppc64le/application/metacontroller
     name: metacontroller
   - kustomizeConfig:
       repoRef:
