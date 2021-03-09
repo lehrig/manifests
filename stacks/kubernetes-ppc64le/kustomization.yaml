@@ -54,17 +54,17 @@ vars:
     apiVersion: v1
     kind: ConfigMap
     name: kubeflow-config
-- fieldref:
-    fieldpath: metadata.namespace
-  name: katib-ui-namespace
-  objref:
-    kind: Service
-    name: katib-ui
-    apiVersion: v1
+#- fieldref:
+#    fieldpath: metadata.namespace
+#  name: katib-ui-namespace
+#  objref:
+#    kind: Service
+#    name: katib-ui
+#    apiVersion: v1
 images:
 - name: argoproj/argoui
   newName: docker.io/kubeflow123/argoui
-  newTag: v2.3.0.ppc64le
+  newTag: 2.3.0-ppc64le
 - name: argoproj/workflow-controller
   newName: docker.io/mgiessing/workflow-controller
   newTag: v2.8.2.ppc64le

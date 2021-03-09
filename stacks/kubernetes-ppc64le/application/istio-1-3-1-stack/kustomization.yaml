@@ -7,7 +7,7 @@ resources:
 images:
 - name: docker.io/prom/prometheus
   newName: docker.io/ibmcom/prometheus-ppc64le
-  newTag: v2.8.0-f1.ppc64le
+  newTag: v2.8.0-f1
 - name: gcr.io/istio-release/citadel
   newName: docker.io/mgiessing/istio-citadel
   newTag: v1.3.1.ppc64le
