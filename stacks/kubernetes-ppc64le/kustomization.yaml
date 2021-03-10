@@ -26,9 +26,21 @@ resources:
   - ../../seldon/seldon-core-operator/overlays/application
   # Metadata
   - ../../metadata/v3
+# Disabling tls traffic in Destination Rule because of issue: https://github.com/kubeflow/kubeflow/issues/5271
+patches:
+- target:
+    kind: DestinationRule
+    version: v1alpha3
+    group: networking.istio.io
+    name: ml-pipeline-ui
+  path: patchuirule.yaml
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
+- name: jupyter-web-app-config
+  behavior: merge
+  files:
+  - ./config/spawner_ui_config.yaml
 - envs:
   - ./config/params.env
   name: kubeflow-config
