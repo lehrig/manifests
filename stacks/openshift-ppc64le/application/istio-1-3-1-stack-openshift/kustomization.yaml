@@ -10,31 +10,31 @@ images:
   newName: image-registry.openshift-image-registry.svc:5000/openshift/prometheus-ppc64le
   newTag: v2.8.0-f1
 - name: gcr.io/istio-release/citadel
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/citadel
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-citadel
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/galley
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/galley
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-galley
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/kubectl
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/kubectl
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-kubectl
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/mixer
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/mixer
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-mixer
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/node-agent-k8s
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/node-agent-k8s
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-node-agent-k8s
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/pilot
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/pilot
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-pilot
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/proxyv2
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/proxyv2
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-proxyv2
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/sidecar_injector
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/sidecar_injector
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-sidecar_injector
   newTag: v1.3.1.ppc64le
 - name: gcr.io/istio-release/proxy-init
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/proxy_init
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/istio-proxy_init
   newTag: v1.3.1.ppc64le
 patchesStrategicMerge:
 - patch_with_ppc64le_images.yaml

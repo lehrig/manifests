@@ -5,5 +5,5 @@ resources:
 - ../../../../application/v3
 images:
 - name: gcr.io/kubeflow-images-public/kubernetes-sigs/application
-  newName: docker.io/lehrig/application
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/application
   newTag: 7b313bc.ppc64le
