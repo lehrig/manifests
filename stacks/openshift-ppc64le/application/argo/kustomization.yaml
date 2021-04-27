@@ -34,7 +34,7 @@ vars:
     name: kubeflow-config
 images:
 - name: argoproj/argoui
-  newTag: v2.3.0.ppc64le
+  newTag: 2.3.0-ppc64le
   newName: image-registry.openshift-image-registry.svc:5000/openshift/argoui
 - name: argoproj/workflow-controller
   newTag: v2.8.2.ppc64le

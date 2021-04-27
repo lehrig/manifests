@@ -7,8 +7,8 @@ resources:
 - ingressgateway.route.yaml
 images:
 - name: docker.io/prom/prometheus
-  newName: image-registry.openshift-image-registry.svc:5000/openshift/prometheus
-  newTag: v2.8.0-f1.ppc64le
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/prometheus-ppc64le
+  newTag: v2.8.0-f1
 - name: gcr.io/istio-release/citadel
   newName: image-registry.openshift-image-registry.svc:5000/openshift/citadel
   newTag: v1.3.1.ppc64le
