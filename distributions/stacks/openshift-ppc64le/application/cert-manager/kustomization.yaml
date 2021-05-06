@@ -1,0 +1,15 @@
+piVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+bases:
+  - ../../../openshift/application/cert-manager
+images:
+- name: quay.io/jetstack/cert-manager-controller
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-controller
+  newTag: v0.11.0.ppc64le
+- name: quay.io/jetstack/cert-manager-webhook
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-webhook
+  newTag: v0.11.0.ppc64le
+- name: quay.io/jetstack/cert-manager-cainjector
+  newName: image-registry.openshift-image-registry.svc:5000/openshift/cert-manager-cainjector
+  newTag: v0.11.0.ppc64le
