@@ -3,3 +3,13 @@ kind: Kustomization
 namespace: kubeflow
 bases:
   - ../../../openshift/application/istio-1-9-0-Openshift
+images:
+- name: docker.io/istio/install-cni
+  newName: quay.io/ibm/istio-install-cni-ppc64le
+  newTag: 1.9.2
+- name: docker.io/istio/proxyv2
+  newName: quay.io/ibm/istio-proxyv2-ppc64le
+  newTag: 1.9.2
+- name: docker.io/istio/pilot
+  newName: quay.io/ibm/istio-pilot-ppc64le
+  newTag: 1.9.2

@@ -1,5 +1,9 @@
-piVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kubeflow
 bases:
   - ../../../openshift/application/tf-job
+images:
+- name: public.ecr.aws/j1r0q0g6/training/tf-operator
+  newName: quay.io/ibm/kubeflow-tf-operator-ppc64le
+  newTag: cd2fc1ff397b1f349f68524f4abd5013a32e3033

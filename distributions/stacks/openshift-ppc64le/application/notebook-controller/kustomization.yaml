@@ -3,3 +3,7 @@ kind: Kustomization
 namespace: kubeflow
 bases:
   - ../../../openshift/application/notebook-controller
+images:
+- name: public.ecr.aws/j1r0q0g6/notebooks/notebook-controller
+  newName: quay.io/ibm/kubeflow-notebook-controller-ppc64le
+  newTag: v1.3.0-rc.1

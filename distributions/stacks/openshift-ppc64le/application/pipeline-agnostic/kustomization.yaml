@@ -3,3 +3,52 @@ kind: Kustomization
 namespace: kubeflow
 bases:
   - ../../../openshift/application/pipeline-agnostic
+images:
+- name: gcr.io/ml-pipeline/workflow-controller
+  newName: quay.io/ibm/kubeflow-workflow-controller-ppc64le
+  newTag: v2.12.9
+- name: gcr.io/ml-pipeline/argoexec
+  newName: quay.io/ibm/kubeflow-argoexec-ppc64le
+  newTag: v2.12.9
+- name: gcr.io/ml-pipeline/application-crd-controller
+  newName: quay.io/ibm/kubeflow-application-crd-controller-ppc64le
+  newTag: 1.0-beta-non-cluster-role
+- name: gcr.io/ml-pipeline/api-server
+  newName: quay.io/ibm/kubeflow-api-server-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/persistenceagent
+  newName: quay.io/ibm/kubeflow-persistenceagent-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/scheduledworkflow
+  newName: quay.io/ibm/kubeflow-scheduledworkflow-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/frontend
+  newName: quay.io/ibm/kubeflow-frontend-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/viewer-crd-controller
+  newName: quay.io/ibm/kubeflow-viewer-crd-controller-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/visualization-server
+  newName: quay.io/ibm/kubeflow-visualization-server-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/metadata-writer
+  newName: quay.io/ibm/kubeflow-metadata-writer-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/cache-deployer
+  newName: quay.io/ibm/kubeflow-cache-deployer-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/cache-server
+  newName: quay.io/ibm/kubeflow-cache-server-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/tfx-oss-public/ml_metadata_store_server
+  newName: quay.io/ibm/kubeflow-ml_metadata_store_server-ppc64le
+  newTag: 0.25.1
+- name: gcr.io/ml-pipeline/metadata-envoy
+  newName: quay.io/ibm/kubeflow-metadata-envoy-ppc64le
+  newTag: 1.5.0
+- name: gcr.io/ml-pipeline/minio
+  newName: docker.io/ibmcom/minio
+  newTag: RELEASE.2019-04-09T01-22-30Z.1
+- name: gcr.io/ml-pipeline/mysql
+  newName: docker.io/ibmcom/mariadb
+  newTag: 10.2.19
