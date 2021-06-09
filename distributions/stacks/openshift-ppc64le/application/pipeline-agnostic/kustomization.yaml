@@ -47,8 +47,8 @@ images:
   newName: quay.io/ibm/kubeflow-metadata-envoy-ppc64le
   newTag: 1.5.0
 - name: gcr.io/ml-pipeline/minio
-  newName: docker.io/ibmcom/minio
+  newName: quay.io/ibm/kubeflow-minio-ppc64le
   newTag: RELEASE.2019-04-09T01-22-30Z.1
 - name: gcr.io/ml-pipeline/mysql
-  newName: docker.io/ibmcom/mariadb
+  newName: quay.io/ibm/kubeflow-mariadb-ppc64le
   newTag: 10.2.19

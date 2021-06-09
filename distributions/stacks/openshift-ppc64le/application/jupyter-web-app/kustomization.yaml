@@ -3,6 +3,11 @@ kind: Kustomization
 namespace: kubeflow
 bases:
   - ../../../openshift/application/jupyter-web-app
+configMapGenerator:
+- name: jupyter-web-app-config
+  behavior: merge
+  files:
+  - ./configs/spawner_ui_config.yaml
 images:
 - name: public.ecr.aws/j1r0q0g6/notebooks/jupyter-web-app
   newName: quay.io/ibm/kubeflow-jupyter-web-app-ppc64le
