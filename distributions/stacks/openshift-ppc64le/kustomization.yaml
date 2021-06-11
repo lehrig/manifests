@@ -8,7 +8,7 @@ images:
   newTag: v1.3.0-rc.1
 - name: quay.io/kubeflow/profile-controller
   newName: quay.io/ibm/kubeflow-profile-controller-ppc64le
-  newTag: v0.8.0
+  newTag: v1.3.0-rc.1
 - name: public.ecr.aws/j1r0q0g6/notebooks/central-dashboard
   newName: quay.io/ibm/kubeflow-central-dashboard-ppc64le
   newTag: v1.3.0-rc.1
