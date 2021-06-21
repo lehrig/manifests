@@ -1,7 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: kubeflow
 bases:
   - ../../../openshift/application/pipeline-agnostic
+patchesStrategicMerge:
+- workflow-controller-deployment-patch.yaml
+configMapGenerator:
+- name: workflow-controller-configmap
+  behavior: merge
+  literals:
+  - containerRuntimeExecutor=pns #old value: k8sapi
+  - executorImage=quay.io/ibm/kubeflow-argoexec-ppc64le:v2.12.9
 images:
 - name: gcr.io/ml-pipeline/workflow-controller
   newName: quay.io/ibm/kubeflow-workflow-controller-ppc64le
