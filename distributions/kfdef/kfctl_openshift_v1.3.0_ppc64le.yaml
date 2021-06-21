@@ -18,6 +18,11 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
+        path: distributions/stacks/openshift-ppc64le/application/add-anonymous-user-filter
+    name: add-anonymous-user-filter
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
         path: distributions/stacks/openshift-ppc64le/application/cert-manager
     name: cert-manager
 #  - kustomizeConfig:
