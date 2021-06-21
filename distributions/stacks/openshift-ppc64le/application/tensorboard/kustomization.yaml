@@ -2,6 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 bases:
   - ../../../openshift/application/tensorboard
+patchesStrategicMerge:
+- set_memory.yaml
 images:
 - name: public.ecr.aws/j1r0q0g6/notebooks/tensorboards-web-app
   newName: quay.io/ibm/kubeflow-tensorboards-web-app-ppc64le
@@ -10,5 +12,5 @@ images:
   newName: quay.io/ibm/kubeflow-tensorboard-controller-ppc64le
   newTag: v1.3.0-rc.1
 - name: gcr.io/kubebuilder/kube-rbac-proxy
-  newName: quay.io/ibm/kubeflow-kube-rbac-proxy-ppc64le
-  newTag: v0.4.0
+  newName: quay.io/brancz/kube-rbac-proxy
+  newTag: v0.6.0-ppc64le
