@@ -10,27 +10,32 @@ spec:
         name: manifests
         path: distributions/stacks/openshift-ppc64le/application/openshift/openshift-scc
     name: openshift-scc
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: distributions/stacks/openshift-ppc64le/application/istio-1-9-0-Openshift
-    name: istio-stack
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: distributions/stacks/openshift-ppc64le/application/add-anonymous-user-filter
-    name: add-anonymous-user-filter
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: distributions/stacks/openshift-ppc64le/application/cert-manager
-    name: cert-manager
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: distributions/stacks/openshift-ppc64le/application/istio-1-9-0-Openshift
+#    name: istio-stack
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: distributions/stacks/openshift-ppc64le/application/add-anonymous-user-filter
+#    name: add-anonymous-user-filter
+#  - kustomizeConfig:
+#      repoRef:
+#        name: manifests
+#        path: distributions/stacks/openshift-ppc64le/application/cert-manager
+#    name: cert-manager
 #  - kustomizeConfig:
 #      repoRef:
 #        name: manifests
 #        path: distributions/stacks/openshift-ppc64le/application/kfp-tekton
 #    name: kfp-tekton
 #Uncomment if you need KFP on Argo
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: distributions/stacks/openshift-ppc64le/application/kubeflow-istio-resources
+    name: kubeflow-istio-resources
   - kustomizeConfig:
       repoRef:
         name: manifests
